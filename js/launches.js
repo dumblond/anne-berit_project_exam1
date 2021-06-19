@@ -12,11 +12,28 @@ async function fetchLaunches() {
             dataContainer.innerHTML = "";
 
         for (let i = 0; i < launches.length; i++) {
-            console.log(launches[i].links.patch.small)
+            console.log(launches[i])
+            let failures;
+            let patch;
+            if (launches[i].failures.length > 0) {
+                failures = "yes";
+            }
+            else {
+                failures = "no";
+            }
+            if (launches[i].links.patch.small) {
+                patch = `<img alt="Picture of ${launches[i].name}" src="${launches[i].links.patch.small}">`
+            }
+            else {
+                patch = `<img alt="Picture not found" src="images/rocket.png">`;
+            }
+            
             dataContainer.innerHTML += `
                                         <div class="launches">
                                             <a href="launch_detail.html?id=${launches[i].name}">
-                                            <img alt="Piture of=${launches[i].name}" src="${launches[i].links.patch.small}">
+                                            ${patch}
+                                            <p> Name: ${launches[i].name} </p>
+                                            <p> Failure: ${failures} </p>
                                         </div>
                                         `
         }
