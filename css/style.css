@@ -1,0 +1,43 @@
+/* Color Theme Swatches in Hex 
+Light almost white color: #B0BAD9; 
+Background blue color: #051342; 
+Dark green blue color: #021826; 
+Light green blue color: #11698C; 
+Mediun green blue color: #035159; 
+*/
+/*
+font-family: 'BenchNine', sans-serif;
+font-family: 'Benne', serif;
+*/
+
+body {
+    font-family: 'BenchNine', sans-serif;
+    max-width: 950px;
+    margin: 0 auto;
+    background-color: #051342;
+}
+
+nav svg {
+    width: 50%;
+}
+
+nav a {
+    display: inline-flex;
+    padding: 10px 40px;
+    font-size: 1.1rem;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+    color: white;
+}
+
+header img {
+    width: 950px;
+}
+
