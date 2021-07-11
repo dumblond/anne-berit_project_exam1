@@ -12,29 +12,20 @@ async function fetchLaunches() {
             dataContainer.innerHTML = "";
 
         for (let i = 0; i < launches.length; i++) {
-            console.log(launches[i])
-            let failures;
-            let patch;
-            if (launches[i].failures.length > 0) {
-                failures = "yes";
-            }
-            else {
-                failures = "no";
-            }
-            if (launches[i].links.patch.small) {
-                patch = `<img alt="Picture of ${launches[i].name}" src="${launches[i].links.patch.small}">`
-            }
-            else {
-                patch = `<img alt="Picture not found" src="images/rocket.png">`;
-            }
+            console.log(launches[i].links.wikipedia)
+            let failures = launches[i].failures.length > 0 ? "yes" : "no";
+            let patch = launches[i].links.patch.small ? 
+                `<img alt="Picture of ${launches[i].name}" referrerpolicy="no-referrer" class="images" src="${launches[i].links.patch.small}">` 
+                : `<img alt="Picture not found" class="images" src="images/rocket.png">`;
+            
             
             dataContainer.innerHTML += `
-                                        <div class="launches">
-                                            <a href="launch_detail.html?id=${launches[i].name}">
-                                            ${patch}
-                                            <p> Name: ${launches[i].name} </p>
-                                            <p> Failure: ${failures} </p>
-                                        </div>
+                <div class="launches">
+                    <a href="launch_detail.html?id=${launches[i].id}">
+                    ${patch}
+                    <p> Name: ${launches[i].name} </p>
+                    <p> Failure: ${failures} </p>
+                </div>
                                         `
         }
              
