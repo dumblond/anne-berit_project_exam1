@@ -44,22 +44,19 @@
         </div>
         <input type="checkbox" id="hamburger">
         <nav class="navigation">
-            <a href="launches.html">Launches</a>
-            <a href="launchplaces.html">Launch places</a>
+            <a href="index.html">Home Launch places</a>
+            <a href="rockets.html">Rockets</a>
+            <a href="upcoming_launches.html">Upcoming launches</a>
             <a class="active" href="contact.html">Contact</a>
-            <a href="newsletter.html">Newsletter</a>
         </nav>
-        <div>
-            <img src="images/milky-way.jpg" alt="">
-            
-        </div>
 
     </header>
 
     <main>
         <h1>Contact</h1>
         <form action="contact.html" method="GET" id="contact-form">
-            
+            <div id="form-result">
+            </div>
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Name (required field)">
             <div class="form-error" id="name-error">Please enter a valid name</div>
@@ -67,10 +64,10 @@
             <label for="email">E-mail:</label>
             <input type="text" name="email" id="email" placeholder="E-mail (required field)">
             <div class="form-error" id="email-error">Please enter a valid e-mail address</div>
-            
-            <label for="subject">Write your message:</label>
-            <textarea name="subject" id="subject" cols="30" rows="10" placeholder="Message (required field)"></textarea>
-            <div class="form-error" id="subject-error">Please enter your message</div>
+
+            <label for="message">Write your message:</label>
+            <textarea name="message" id="message" placeholder="Message (required field)"></textarea>
+            <div class="form-error" id="message-error">Please enter your message</div>
 
             <button>submit</button>
 
@@ -80,7 +77,7 @@
     <footer>
         <form action="newsletter.html">
             <label for="e-mail">Get our newsletter</label>
-            <input type="email" name="e-mail" id="e-mail" placeholder="exampel@email.com">
+            <input type="email" name="e-mail" id="e-mail" placeholder="example@email.com">
         </form>
 
         <div class="social">

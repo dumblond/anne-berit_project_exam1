@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="space-x, rockets, dragons, launches">
-    <meta name="description" content="SpaceX information about launchplaces and more">
+    <meta name="keywords" content="space-x, rockets, launches, launchpads">
+    <meta name="description" content="SpaceX detail information about launches and more">
     <meta name="author" content="Anne-Berit Murberg">
 
-    <title>SpaceX - microsite launchplaces</title>
+    <title>SpaceX - microsite Rockets</title>
 
     <link rel="icon" type="image/png" href="images/spacex_logo_icon_144865.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -44,23 +44,24 @@
         </div>
         <input type="checkbox" id="hamburger">
         <nav class="navigation">
-            <a href="launches.html">Launches</a>
-            <a class="active" href="launchplaces.html">Launch places</a>
+            <a href="index.html">Home Launch places</a>
+            <a class="active" href="rockets.html">Rockets</a>
+            <a href="upcoming_launches.html">Upcoming launches</a>
             <a href="contact.html">Contact</a>
-            <a href="newsletter.html">Newsletter</a>
         </nav>
+
     </header>
 
     <main>
-        <h1>Launch places</h1>
-        <div class="launch-container">
+        <h1>Rockets</h1>
+        <div class="rockets-container">
             <div class="loader"></div>
         </div>
     </main>
     <footer>
-        <form action="newsletter.html">
+        <form action="newsletter.html" method="GET">
             <label for="e-mail">Get our newsletter</label>
-            <input type="email" name="e-mail" id="e-mail" placeholder="exampel@email.com">
+            <input type="email" name="e-mail" id="e-mail" placeholder="example@email.com">
         </form>
 
         <div class="social">
@@ -98,7 +99,7 @@
         </div>
     </footer>
 
-    <script src="js/launchplaces.js"></script>
+    <script src="js/rockets.js"></script>
     <script src="js/components/message.js"></script>
 </body>
 

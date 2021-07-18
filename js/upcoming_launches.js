@@ -1,19 +1,15 @@
-const url = "https://api.spacexdata.com/v4/launches";
+const url = "https://api.spacexdata.com/v4/launches/upcoming";
 
 const dataContainer = document.querySelector(".launch-container");
 
 async function fetchLaunches() {
     try {
-            const response = await fetch(url);
-            const launches = await response.json();
-
-            console.log(launches);
-
-            dataContainer.innerHTML = "";
+        const response = await fetch(url);
+        const launches = await response.json();
+        
+        dataContainer.innerHTML = "";
 
         for (let i = 0; i < launches.length; i++) {
-            console.log(launches[i].links.wikipedia)
-            let failures = launches[i].failures.length > 0 ? "yes" : "no";
             let patch = launches[i].links.patch.small ? 
                 `<img alt="Picture of ${launches[i].name}" referrerpolicy="no-referrer" class="images" src="${launches[i].links.patch.small}">` 
                 : `<img alt="Picture not found" class="images" src="images/rocket.png">`;
@@ -23,16 +19,14 @@ async function fetchLaunches() {
                 <div class="launches">
                     <a href="launch_detail.html?id=${launches[i].id}">
                     ${patch}
-                    <p> Name: ${launches[i].name} </p>
-                    <p> Failure: ${failures} </p>
-                </div>
-                                        `
-        }
-             
+                    <h2>${launches[i].name}</h2>
+                    <p>${new Date(launches[i].date_utc).toLocaleDateString()} </p>
+                </div>`;
+        }            
 
     } catch (error) {
         console.log(error);
-        dataContainer.innerHTML = message("sorry", "error");
+        dataContainer.innerHTML = message("Sorry, something went wrong &#128533", "error");
     }
 }
 
