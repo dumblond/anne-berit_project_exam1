@@ -240,3 +240,111 @@ footer label {
     display: block;
     margin: 2%;
 }
+
+/* Different screen sizes */
+
+/* for ipad screens */
+
+@media only screen and (min-width: 500px) and (max-width: 850px) {
+
+    h1 {
+        text-align: center;
+    }
+
+    body {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        width: 30%;
+    }
+    
+    .launches {
+        width: 250px;
+    }
+    
+    .images {
+        height: 200px;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    button {
+        margin: 2% 35%;
+        width: 30%;
+    }
+    
+    .container {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .social svg {
+        width: 5%;
+        margin: 5% 2% 0 2%;
+    }
+
+
+    
+
+
+}
+
+/* Large screen size */
+
+@media only screen and (min-width: 851px) {
+
+    body {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .logo {
+        width: 20%;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .social svg {
+        width: 4%;
+        margin: 5% 2% 0 2%;
+    }
+
+    .images {
+        max-width: 250px;
+        min-height: 200px;
+        text-align: center;
+    }
+
+    button {
+        margin: 2% 40%;
+        width: 20%;
+    }
+
+    .flex-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .column {
+        flex: 1;
+    }
+
+   
+}
+
+
+                                                                            

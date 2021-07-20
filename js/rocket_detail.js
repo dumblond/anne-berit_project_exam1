@@ -12,6 +12,8 @@ async function fetchRocket() {
         const rocket = await response.json();
         console.log(rocket.name);
 
+        document.title = rocket.name;
+
         rocketDetailContainer.innerHTML = "";
 
         rocketDetailContainer.innerHTML += `

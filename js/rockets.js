@@ -9,6 +9,8 @@ async function fetchRockets() {
 
         console.log(rockets);
 
+        document.title = rockets.name;
+
         rocketsContainer.innerHTML = "";
 
         for (let i = 0; i < rockets.length; i++) {

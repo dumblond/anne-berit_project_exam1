@@ -6,6 +6,10 @@ async function fetchLaunches() {
     try {
         const response = await fetch(url);
         const launches = await response.json();
+
+        console.log(launches);
+        
+        document.title = launches.name;
         
         dataContainer.innerHTML = "";
 

@@ -9,6 +9,8 @@ async function fetchLaunchpads() {
 
         console.log(launchpads);
 
+        document.title = launchpads.name;
+
         launchpadsContainer.innerHTML = "";
 
         for (let i = 0; i < launchpads.length; i++) {

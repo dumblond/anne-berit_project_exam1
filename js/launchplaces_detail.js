@@ -45,7 +45,7 @@ async function fetchLaunchPad() {
 async function fetchLaunches(launchesId) {
     const launchDetailContainer = document.querySelector(".launch-information");
 
-    launchDetailContainer.innerHTML = launchesId.length > 0 ? `<h2>Missions from this launchplace</h2>` : `<h2>No launches from here yet &#128528</h2>`;
+    launchDetailContainer.innerHTML = launchesId.length > 0 ? `<h2>Missions from this launchplace</h2>` : `<h2>No launches from here yet</h2>`;
         
     for (let i = 0; i < launchesId.length; i++) {
         const response =  await fetch(launchesUrl+launchesId[i]);
