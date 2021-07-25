@@ -87,7 +87,7 @@ a:link, a:visited {
     color: #ffffff;
 }
 
-a:hover, a:active {
+a:hover, a.active {
     text-decoration: underline;   
 }
 
@@ -221,6 +221,7 @@ input[type=text], textarea {
     width: 30%;
     padding: 5px;
     font-size: 1rem;
+    text-align: center;
 }
 
 textarea {
@@ -388,8 +389,12 @@ footer label {
     }
 
     .launchpad-information .images, .rocket-information .images {
-        max-width: 400px;
+        max-width: 350px;
         text-align: center;
+    }
+
+    #e-mail {
+        width: 40%;
     }
 
 }                                                                      

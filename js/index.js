@@ -17,6 +17,7 @@ async function fetchLaunchpads() {
                     <img alt="Picture of ${launchpads[i].name}" referrerpolicy="no-referrer" class="images" src="${launchpads[i].images.large}">
                     <h2>${launchpads[i].locality}</h2>
                     <p>${launchpads[i].region}</p>    
+                    <p>Launches: ${launchpads[i].launch_successes}</p>
                 </div>`;
         }
 
