@@ -7,14 +7,9 @@ async function fetchRockets() {
         const responseRockets = await fetch(rocketsUrl);
         const rockets = await responseRockets.json(); 
 
-        console.log(rockets);
-
-        document.title = rockets.name;
-
         rocketsContainer.innerHTML = "";
 
         for (let i = 0; i < rockets.length; i++) {
-            console.log(rockets[i].engines.propellant_2)
             rocketsContainer.innerHTML += `
             <a href="rocket_detail.html?id=${rockets[i].id}">
             <div class="launches">
@@ -22,6 +17,7 @@ async function fetchRockets() {
             <h2>${rockets[i].name}</h2>
             </div>`;
         }
+        
     } catch (error) {
         console.log(error);
         rocketsContainer.innerHTML = message("Sorry, something went wrong &#128533", "error");

@@ -34,6 +34,7 @@ h2 {
     margin: 2rem 0;
 }
 
+
 /* navigation */
 
 .nav-bar {
@@ -220,6 +221,13 @@ input[type=text], textarea {
     font-size: 1rem;   
 }
 
+#e-mail {
+    font-family: 'BenchNine', sans-serif;
+    width: 30%;
+    padding: 5px;
+    font-size: 1rem;
+}
+
 textarea {
     height: 200px;
 }
@@ -241,6 +249,7 @@ footer label {
     margin: 2%;
 }
 
+
 /* Different screen sizes */
 
 /* for ipad screens */
@@ -251,12 +260,16 @@ footer label {
         text-align: center;
     }
 
-    body {
+    body, nav a, input[type=text], textarea, #e-mail, button {
         font-size: 1.1rem;
     }
 
     .logo {
         width: 30%;
+    }
+
+    .hamburger {
+        width: 25px;   
     }
     
     .launches {
@@ -271,6 +284,7 @@ footer label {
 
     button {
         margin: 2% 35%;
+        padding: 10px;
         width: 30%;
     }
     
@@ -282,11 +296,7 @@ footer label {
     .social svg {
         width: 5%;
         margin: 5% 2% 0 2%;
-    }
-
-
-    
-
+    } 
 
 }
 
@@ -294,8 +304,8 @@ footer label {
 
 @media only screen and (min-width: 851px) {
 
-    body {
-        font-size: 1.2rem;
+    body, nav a, input[type=text], textarea, #e-mail, button {
+        font-size: 1.3rem;
     }
 
     h1 {
@@ -303,8 +313,16 @@ footer label {
         font-size: 2rem;
     }
 
+    h2 {
+        font-size: 1.7rem;
+    }
+
     .logo {
-        width: 20%;
+        width: 25%;
+    }
+
+    .hamburger {
+        width: 30px;   
     }
 
     .container {
@@ -318,8 +336,7 @@ footer label {
     }
 
     .social svg {
-        width: 4%;
-        margin: 5% 2% 0 2%;
+        width: 7%;
     }
 
     .images {
@@ -329,21 +346,48 @@ footer label {
     }
 
     button {
-        margin: 2% 40%;
-        width: 20%;
+        margin: 2% 30%;
+        padding: 10px;
+        width: 40%;
     }
 
     .flex-container {
-        align-items: center;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+    }
+
+    footer .flex-container  {
+        align-items: center;
     }
 
     .column {
         flex: 1;
     }
 
+    iframe {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #B0BAD9;
+        border-radius: 1rem;
+    }
+
+    .launch-information {
+        padding-left: 50px;
+    }
+
+    .launchpad-information, .rocket-information {
+        flex: 1;
+        padding: 10px;
+    }
    
+    .launchpad-information .information, .rocket-information .information {
+        min-height: 700px;
+    }
+    .launchpad-information .images, .rocket-information .images {
+        height: 250px;
+        max-width: 400px;
+        text-align: center;
+    }
 }
 
 

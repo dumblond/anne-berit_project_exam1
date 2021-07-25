@@ -7,10 +7,6 @@ async function fetchLaunchpads() {
         const response = await fetch(url);
         const launchpads = await response.json();
 
-        console.log(launchpads);
-
-        document.title = launchpads.name;
-
         launchpadsContainer.innerHTML = "";
 
         for (let i = 0; i < launchpads.length; i++) {
@@ -20,8 +16,8 @@ async function fetchLaunchpads() {
                 <div class="launches">
                     <a href="launchplaces_detail.html?id=${launchpads[i].id}">
                     <img alt="Picture of ${launchpads[i].name}" referrerpolicy="no-referrer" class="images" src="${launchpads[i].images.large}">
-                    <h2> ${launchpads[i].locality} </h2>
-                    <p> ${launchpads[i].region} </p>    
+                    <h2>${launchpads[i].locality}</h2>
+                    <p>${launchpads[i].region}</p>    
                 </div>`;
         }
 

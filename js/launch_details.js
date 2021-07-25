@@ -12,7 +12,6 @@ async function fetchLaunch() {
     try {
         const response = await fetch(url + params.get("id"));
         const launch = await response.json();
-        console.log(launch.details);
 
         document.title = launch.name;
 
@@ -37,8 +36,6 @@ async function fetchLaunch() {
                 <iframe src="https://www.youtube.com/embed/${launch.links.youtube_id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div>` : "";
 
-        console.log(launch);
-
         launchDetailContainer.innerHTML += `
             <a href="${document.referrer}"> &#8592; Back to the overview</a>
             <h1>${launch.name}</h1>
@@ -47,12 +44,16 @@ async function fetchLaunch() {
                 <p>Launch date and time: ${date}</p>
                 <p>${details}</p>
             </div>
-            <div class="rocket-information"></div>
-            <div class="launchpad-information"></div>
+            <div class="flex-container">
+                <div class="rocket-information"></div>
+                <div class="launchpad-information"></div>
+            </div>
             ${video}
-            ${article}
-            ${wikipedia}        
-            `;
+            <div class="flex-container">
+                <div>${article}</div>
+                <div>${wikipedia}</div> 
+            </div>`;
+
         fetchRocket(launch.rocket);
         fetchLaunchpad(launch.launchpad);
 
@@ -67,8 +68,6 @@ async function fetchRocket(rocketId) {
 
     const response = await fetch(rocketUrl+rocketId);
     const rocket = await response.json();
-
-    console.log(rocket.flickr_images);
     
     rocketDetailContainer.innerHTML = `
         <div class="information">
@@ -81,8 +80,7 @@ async function fetchRocket(rocketId) {
                     <li>Weight: ${rocket.mass.kg} kg</li>
                 </ul>
             </div>
-        </div>
-    `;
+        </div>`;
 }
 
 async function fetchLaunchpad(launchPadId) {
@@ -90,8 +88,6 @@ async function fetchLaunchpad(launchPadId) {
 
     const response = await fetch(launchPadUrl+launchPadId);
     const launchpad = await response.json();
-
-    console.log(launchpad.name);
 
     launchPadDetialContainer.innerHTML = `
         <div class="information">
@@ -103,8 +99,7 @@ async function fetchLaunchpad(launchPadId) {
                 <li>Locality: ${launchpad.locality}</li>
                 <li>Status: ${launchpad.status}</li>
             </ul>
-            <p>Details: ${launchpad.details}</p>
-    `;
+            <p>Details: ${launchpad.details}</p>`;
 }
 
 fetchLaunch();

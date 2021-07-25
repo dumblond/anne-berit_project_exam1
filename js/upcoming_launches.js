@@ -6,18 +6,13 @@ async function fetchLaunches() {
     try {
         const response = await fetch(url);
         const launches = await response.json();
-
-        console.log(launches);
-        
-        document.title = launches.name;
-        
+           
         dataContainer.innerHTML = "";
 
         for (let i = 0; i < launches.length; i++) {
             let patch = launches[i].links.patch.small ? 
                 `<img alt="Picture of ${launches[i].name}" referrerpolicy="no-referrer" class="images" src="${launches[i].links.patch.small}">` 
                 : `<img alt="Picture not found" class="images" src="images/rocket.png">`;
-            
             
             dataContainer.innerHTML += `
                 <div class="launches">

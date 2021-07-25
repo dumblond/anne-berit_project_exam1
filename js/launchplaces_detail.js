@@ -11,13 +11,10 @@ async function fetchLaunchPad() {
     try {
         const response = await fetch(url + params.get("id"));
         const LaunchPad = await response.json();
-        console.log(LaunchPad);
 
         document.title = LaunchPad.name;
 
         launchPadDetailContainer.innerHTML = "";
-
-        console.log(LaunchPad.longitude);
 
         launchPadDetailContainer.innerHTML += `
             <a href="${document.referrer}"> &#8592; Back to the overview</a>
@@ -32,8 +29,7 @@ async function fetchLaunchPad() {
                 </ul>
                 </div>    
             <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3504.2632367722717!2d${LaunchPad.longitude}!3d${LaunchPad.latitude}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sno!2sno!4v1626532151927!5m2!1sno!2sno" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <div class="launch-information"></div> 
-            `;
+            <div class="launch-information"></div>`;
         fetchLaunches(LaunchPad.launches);
 
     } catch (error) {
@@ -51,10 +47,13 @@ async function fetchLaunches(launchesId) {
         const response =  await fetch(launchesUrl+launchesId[i]);
         const launch = await response.json();
 
-        console.log(launch);
+        let date = new Date(launch.date_utc).getFullYear();
+
         launchDetailContainer.innerHTML += `
-            <a href="launch_detail.html?id=${launch.id}"><li>${launch.name}</li></a>
-            `;   
+            <a href="launch_detail.html?id=${launch.id}">
+            <ul><li>${launch.name}</li><ul> 
+                <li>Year of flight: ${date}</li>
+            </ul></a>`;   
     }
 }
 

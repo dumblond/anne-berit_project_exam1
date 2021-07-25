@@ -10,8 +10,7 @@ async function fetchRocket() {
     try {
         const response = await fetch(url + params.get("id"));
         const rocket = await response.json();
-        console.log(rocket.name);
-
+        
         document.title = rocket.name;
 
         rocketDetailContainer.innerHTML = "";
@@ -24,7 +23,7 @@ async function fetchRocket() {
                 <p>First flight: ${rocket.first_flight}</p>
                 <p>${rocket.description}</p>
             </div>
-            <div class="information">
+            <div class="information launch-information">
                 <h2>Facts about ${rocket.name}</h2>
                 <p>Size:</p>
                 <ul>
