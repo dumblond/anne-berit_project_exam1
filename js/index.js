@@ -10,8 +10,7 @@ async function fetchLaunchpads() {
         launchpadsContainer.innerHTML = "";
 
         for (let i = 0; i < launchpads.length; i++) {
-            console.log(launchpads[i].images.large)
-
+            
             launchpadsContainer.innerHTML += `
                 <div class="launches">
                     <a href="launchplaces_detail.html?id=${launchpads[i].id}">

@@ -97,7 +97,6 @@ a:hover, a:active {
 }
 
 
-
 /* container */
 
 .launch-container {
@@ -131,12 +130,6 @@ a:hover, a:active {
     margin-right: 15px;
 }
 
-#map {
-    width: 300px;
-    height: 300px;
-}
-
-
 .information {
     margin: 0 0 2rem 0;
     border: 1px solid #B0BAD9;
@@ -154,6 +147,7 @@ iframe {
 .information svg {
     width: 3rem;
 }
+
 
 /* loader */
 
@@ -177,6 +171,8 @@ iframe {
         transform: rotate(360deg);
     }
 }
+
+
 /*contact form*/
 
 .form-error {
@@ -208,7 +204,6 @@ button {
     border: none;
     color: white;
 }
-
 
 input[type=text], textarea {
     width: 100%;
@@ -250,7 +245,9 @@ footer label {
 }
 
 
+
 /* Different screen sizes */
+
 
 /* for ipad screens */
 
@@ -276,6 +273,12 @@ footer label {
         width: 250px;
     }
     
+    .launchpad-information .images, .rocket-information .images {
+        min-width: 100%;
+        text-align: center;
+        height: auto;
+    }
+
     .images {
         height: 200px;
         max-width: 200px;
@@ -297,8 +300,8 @@ footer label {
         width: 5%;
         margin: 5% 2% 0 2%;
     } 
-
 }
+
 
 /* Large screen size */
 
@@ -383,12 +386,10 @@ footer label {
     .launchpad-information .information, .rocket-information .information {
         min-height: 700px;
     }
+
     .launchpad-information .images, .rocket-information .images {
-        height: 250px;
         max-width: 400px;
         text-align: center;
     }
-}
 
-
-                                                                            
+}                                                                      
