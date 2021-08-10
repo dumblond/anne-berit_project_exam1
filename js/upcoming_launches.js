@@ -12,7 +12,7 @@ async function fetchLaunches() {
         for (let i = 0; i < launches.length; i++) {
             let patch = launches[i].links.patch.small ? 
                 `<img alt="Picture of ${launches[i].name}" referrerpolicy="no-referrer" class="images" src="${launches[i].links.patch.small}">` 
-                : `<img alt="Picture not found" class="images" src="images/rocket.png">`;
+                : `<img alt="Picture not found" class="images" src="images/rocket_picture_not_found.png">`;
             
             dataContainer.innerHTML += `
                 <div class="launches">
