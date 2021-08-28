@@ -66,40 +66,52 @@ async function fetchLaunch() {
 async function fetchRocket(rocketId) {
     const rocketDetailContainer = document.querySelector(".rocket-information");
 
-    const response = await fetch(rocketUrl+rocketId);
-    const rocket = await response.json();
-    
-    rocketDetailContainer.innerHTML = `
-        <div class="information">
-            <a href="rocket_detail.html?id=${rocket.id}"><h2>Rocket ${rocket.name}</h2></a>
-            <img alt="Picture of ${rocket.name}" referrerpolicy="no-referrer" class="images" src="${rocket.flickr_images}">
-            <div class="rocket-facts">
-                <ul>
-                    <li>Height: ${rocket.height.meters} meters</li>
-                    <li>Diameter: ${rocket.diameter.meters} meters</li>
-                    <li>Weight: ${rocket.mass.kg} kg</li>
-                </ul>
-            </div>
-        </div>`;
+    try {
+        const response = await fetch(rocketUrl + rocketId);
+        const rocket = await response.json();
+
+        rocketDetailContainer.innerHTML = `
+            <div class="information">
+                <a href="rocket_detail.html?id=${rocket.id}"><h2>Rocket ${rocket.name}</h2></a>
+                <img alt="Picture of ${rocket.name}" referrerpolicy="no-referrer" class="images" src="${rocket.flickr_images}">
+                <div class="rocket-facts">
+                    <ul>
+                        <li>Height: ${rocket.height.meters} meters</li>
+                        <li>Diameter: ${rocket.diameter.meters} meters</li>
+                        <li>Weight: ${rocket.mass.kg} kg</li>
+                    </ul>
+                </div>
+            </div>`;
+    } catch (error) {
+        console.log(error);
+        rocketDetailContainer.innerHTML = message("Sorry, something went wrong &#128533", "error");
+    }
 }
 
 async function fetchLaunchpad(launchPadId) {
     const launchPadDetialContainer = document.querySelector(".launchpad-information");
+    try {
+        const response = await fetch(launchPadUrl + launchPadId);
+        const launchpad = await response.json();
 
-    const response = await fetch(launchPadUrl+launchPadId);
-    const launchpad = await response.json();
+        launchPadDetialContainer.innerHTML = `
+            <div class="information">
+                <a href="launchplaces_detail.html?id=${launchpad.id}"><h2>Launchpad ${launchpad.locality}</h2></a>
+                <img alt="Picture of ${launchpad.name}" referrerpolicy="no-referrer" class="images" src="${launchpad.images.large}">
+                <div class ="launcpad-facts"
+                <ul>
+                    <li>Name: ${launchpad.name}</li>
+                    <li>Locality: ${launchpad.locality}</li>
+                    <li>Status: ${launchpad.status}</li>
+                </ul>
+                <p>Details: ${launchpad.details}</p>
+            </div>`;
 
-    launchPadDetialContainer.innerHTML = `
-        <div class="information">
-            <a href="launchplaces_detail.html?id=${launchpad.id}"><h2>Launchpad ${launchpad.locality}</h2></a>
-            <img alt="Picture of ${launchpad.name}" referrerpolicy="no-referrer" class="images" src="${launchpad.images.large}">
-            <div class ="launcpad-facts"
-            <ul>
-                <li>Name: ${launchpad.name}</li>
-                <li>Locality: ${launchpad.locality}</li>
-                <li>Status: ${launchpad.status}</li>
-            </ul>
-            <p>Details: ${launchpad.details}</p>`;
+    } catch (error) {
+        console.log(error);
+        launchPadDetialContainer.innerHTML = message("Sorry, something went wrong &#128533", "error");
+    }
+
 }
 
 fetchLaunch();

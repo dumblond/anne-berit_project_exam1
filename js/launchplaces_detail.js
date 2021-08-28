@@ -42,18 +42,25 @@ async function fetchLaunches(launchesId) {
     const launchDetailContainer = document.querySelector(".launch-information");
 
     launchDetailContainer.innerHTML = launchesId.length > 0 ? `<h2>Missions from this launchplace</h2>` : `<h2>No launches from here yet</h2>`;
-        
+
     for (let i = 0; i < launchesId.length; i++) {
-        const response =  await fetch(launchesUrl+launchesId[i]);
-        const launch = await response.json();
+        try {
+            const response = await fetch(launchesUrl + launchesId[i]);
+            const launch = await response.json();
 
-        let date = new Date(launch.date_utc).getFullYear();
+            let date = new Date(launch.date_utc).getFullYear();
 
-        launchDetailContainer.innerHTML += `
-            <a href="launch_detail.html?id=${launch.id}">
-            <ul><li>${launch.name}</li><ul> 
-                <li>Year of flight: ${date}</li>
-            </ul></a>`;   
+            launchDetailContainer.innerHTML += `
+                <a href="launch_detail.html?id=${launch.id}">
+                <ul><li>${launch.name}</li><ul> 
+                    <li>Year of flight: ${date}</li>
+                </ul></a>`;
+
+        } catch (error) {
+            console.log(error);
+            launchDetailContainer.innerHTML = message("Sorry, something went wrong &#128533", "error");
+        }
+
     }
 }
 

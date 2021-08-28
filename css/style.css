@@ -10,7 +10,7 @@ font-family: 'BenchNine', sans-serif;
 font-family: 'Benne', serif;
 */
 
-*,*::before, *::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -42,8 +42,6 @@ h2 {
     display: flex;
     justify-content: space-between;
     padding: 10px 15px;
-    position: sticky;
-    top: 0;
 }
 
 .logo {
@@ -112,7 +110,7 @@ a:hover, a.active {
     padding: 1rem;
     border: 1px solid #B0BAD9;
     border-radius: 1rem;
-    text-align: center;    
+    text-align: center;
 }
 
 .images {

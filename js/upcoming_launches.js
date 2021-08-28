@@ -17,9 +17,10 @@ async function fetchLaunches() {
             dataContainer.innerHTML += `
                 <div class="launches">
                     <a href="launch_detail.html?id=${launches[i].id}">
-                    ${patch}
-                    <h2>${launches[i].name}</h2>
-                    <p>${new Date(launches[i].date_utc).toLocaleDateString()} </p>
+                        ${patch}
+                        <h2>${launches[i].name}</h2>
+                        <p>${new Date(launches[i].date_utc).toLocaleDateString()}</p>
+                    </a>
                 </div>`;
         }            
 

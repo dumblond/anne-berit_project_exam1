@@ -20,7 +20,7 @@ function validateContactForm(event) {
     messageError.style.display = messageIsValid ? "none" : "block";
 
     if (nameIsValid && emailIsValid && messageIsValid) {
-        resultField.innerHTML = message("Thank you, we will be in contact &#128522");
+        resultField.innerHTML = message("Thank you, we will be in touch &#128522");
         setTimeout(function() {
             resultField.innerHTML = "";
         }, 10000);

@@ -11,11 +11,12 @@ async function fetchRockets() {
 
         for (let i = 0; i < rockets.length; i++) {
             rocketsContainer.innerHTML += `
-            <a href="rocket_detail.html?id=${rockets[i].id}">
-            <div class="launches">
-            <img alt="Picture of ${rockets[i].name}" referrerpolicy="no-referrer" class="images" src="${rockets[i].flickr_images}">
-            <h2>${rockets[i].name}</h2>
-            </div>`;
+                <a href="rocket_detail.html?id=${rockets[i].id}">
+                    <div class="launches">
+                        <img alt="Picture of ${rockets[i].name}" referrerpolicy="no-referrer" class="images" src="${rockets[i].flickr_images}">
+                        <h2>${rockets[i].name}</h2>
+                    </div>
+                </a>`;
         }
         
     } catch (error) {

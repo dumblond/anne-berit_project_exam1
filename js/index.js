@@ -14,10 +14,11 @@ async function fetchLaunchpads() {
             launchpadsContainer.innerHTML += `
                 <div class="launches">
                     <a href="launchplaces_detail.html?id=${launchpads[i].id}">
-                    <img alt="Picture of ${launchpads[i].name}" referrerpolicy="no-referrer" class="images" src="${launchpads[i].images.large}">
-                    <h2>${launchpads[i].locality}</h2>
-                    <p>${launchpads[i].region}</p>    
-                    <p>Launches: ${launchpads[i].launch_successes}</p>
+                        <img alt="Picture of ${launchpads[i].name}" referrerpolicy="no-referrer" class="images" src="${launchpads[i].images.large}">
+                        <h2>${launchpads[i].locality}</h2>
+                        <p>${launchpads[i].region}</p>    
+                        <p>Launches: ${launchpads[i].launch_successes}</p>
+                    </a>
                 </div>`;
         }
 
